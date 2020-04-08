@@ -1,0 +1,22 @@
+<mapper namespace="com.lagou.learn.mapl.sqlsession.IUserDao">
+
+  <select id="findAll" resultType="com.lagou.learn.mapl.model.User" parameterType="com.lagou.learn.mapl.model.User">
+    select * from user
+  </select>
+
+  <select id="findAllByCondition" resultType="com.lagou.learn.mapl.model.User" parameterType="com.lagou.learn.mapl.model.User">
+    select * from user where id = #{id} and  username = #{username}
+  </select>
+
+  <insert id="insert"  parameterType="com.lagou.learn.mapl.model.User">
+    insert into user(id,username) values(#{id},#{username})
+  </insert>
+
+  <update id="update"  parameterType="com.lagou.learn.mapl.model.User">
+    update  user set username=#{username} where id = #{id}
+  </update>
+
+  <update id="delete"  parameterType="com.lagou.learn.mapl.model.User">
+    delete from  user where  id = #{id}
+  </update>
+</mapper>
